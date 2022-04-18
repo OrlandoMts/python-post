@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 class HomeView(View):
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         context = {
 
         }
