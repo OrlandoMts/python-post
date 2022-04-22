@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Publicaciones</title>
 </head>
 <body>
     <h2>Estos son mis publicaciones</h2>
+    {% for post in posts %}
+    <a href="{% url 'blog:detail' post.id %}">{{post.title}}</a>
+    <br>
+    {% endfor %}
     <p><a href="{% url 'blog:create-post' %}">Agregrar una nueva publicacion</a></p>
 </body>
 </html>

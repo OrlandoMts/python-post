@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle</title>
+</head>
+<body>
+    <h2>Información de {{post.title}}</h2>
+    <p>{{post.content}}</p>
+    <button><a href="{% url 'blog:update' post.id %}">Editar</a></button>
+    <button><a href="{% url 'blog:delete' post.id %}">Eliminar</a></button>
+    <br>
+    <a href="{% url 'blog:home' %}">Volver</a>
+</body>
+</html>

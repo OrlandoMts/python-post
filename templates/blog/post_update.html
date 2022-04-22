@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear publicacion</title>
+    <title>Editar</title>
 </head>
 <body>
-    <h2>Formulario</h2>
+    <h2>Editar publicacion</h2>
     <form action="" method="POST">
         {% csrf_token %}
         Titulo{{form.title}}
         <br>
         Contenido{{form.content}}
-        <button type="submit">Registrar</button>
+        <button type="submit">Guardar</button>
     </form>
-    <a href="{% url 'blog:home' %}">Regresar</a>
+    {% comment %} <a href="{% url 'blog:detail' %}">Regresar</a> {% endcomment %}
 </body>
 </html>
