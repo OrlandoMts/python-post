@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-</head>
-<body>
-    <h1>Hola Mundo!</h1>
-    <p>Visita mi blog <a href="{% url 'blog:home' %}">aqui</a></p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+    </head>
+    <section class="flex justify-center">
+        <div class="w-3/4 h-auto mt-12 p-4 flex flex-col items-center bg-[#fedd6a] rounded-lg drop-shadow-xlg">
+            <h1 class="text-2xl font-bold my-2">¡Hola Mundo!</h1>
+            <p class="leading-6 my-2">Es una app hecha con python usando Django 🐍</p>
+            <p>Visita mi blog -> <a href="{% url 'blog:home' %}" class="text-[#1e415e] italic">aqui</a></p>            
+        </div>
+    </section>
+    </html>
+{% endblock content %}

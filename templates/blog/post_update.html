@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
-</head>
-<body>
-    <h2>Editar publicacion</h2>
-    <form action="" method="POST">
-        {% csrf_token %}
-        Titulo{{form.title}}
-        <br>
-        Contenido{{form.content}}
-        <button type="submit">Guardar</button>
-    </form>
-    {% comment %} <a href="{% url 'blog:detail' %}">Regresar</a> {% endcomment %}
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar</title>
+    </head>
+    <section class="flex justify-center">
+        <div class="w-3/4 h-auto mt-12 p-4 flex flex-col items-center bg-[#fedd6a] rounded-lg drop-shadow-xlg">
+            <h2  class="text-2xl font-bold my-2">Editar publicacion</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                Titulo{{form.title}}
+                <br>
+                Contenido{{form.content}}
+                <button type="submit" class="my-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#1e415e] hover:bg-indigo-700">Guardar</button>
+            </form>
+        </div>
+        {% comment %} <a href="{% url 'blog:detail' %}">Regresar</a> {% endcomment %}
+    </section >
+    </html>
+{% endblock content %}

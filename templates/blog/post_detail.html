@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle</title>
-</head>
-<body>
-    <h2>Información de {{post.title}}</h2>
-    <p>{{post.content}}</p>
-    <button><a href="{% url 'blog:update' post.id %}">Editar</a></button>
-    <button><a href="{% url 'blog:delete' post.id %}">Eliminar</a></button>
-    <br>
-    <a href="{% url 'blog:home' %}">Volver</a>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Detalle</title>
+    </head>
+    <section class="flex justify-center">
+        <div class="w-3/4 h-auto mt-12 p-4 flex flex-col items-center bg-[#fedd6a] rounded-lg drop-shadow-xlg">
+            <h2 class="text-2xl font-bold my-2">Información de "{{post.title}}"</h2>
+            <p class="italic">{{post.content}}</p>
+            <div class="flex justify-between w-[250px]">
+                <button class="my-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#1e415e] hover:bg-indigo-700"><a href="{% url 'blog:update' post.id %}">Editar</a></button>
+                <button class="my-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-indigo-700"><a href="{% url 'blog:delete' post.id %}">Eliminar</a></button>
+            </div>
+            <br>
+            <button class="my-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#1e415e] hover:bg-indigo-700"><a href="{% url 'blog:home' %}">Volver</a></button>
+        </div>
+    </section class="flex justify-center">
+    </html>
+{% endblock content %}

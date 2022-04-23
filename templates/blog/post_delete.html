@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar</title>
-</head>
-<body>
-    <h2>Estas seguro de eliminar la publicacion: </h2>
-    <p>publicacion "{{post.title}}"</p>
-    <form method="POST">
-        {% csrf_token %}
-        {{form}}
-        <button type="submit">Eliminar</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Eliminar</title>
+    </head>
+    <section class="flex justify-center">
+        <div class="w-3/4 h-auto mt-12 p-4 flex flex-col items-center bg-[#fedd6a] rounded-lg drop-shadow-xlg">
+            <h2 class="text-2xl font-bold my-2">¿Estas seguro de eliminar la publicacion?</h2>
+            <p class="italic">"{{post.title}}"</p>
+            <form method="POST">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class="my-2 inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-indigo-700">Eliminar</button>
+            </form>
+        </div>
+    </section class="flex justify-center">
+    </html>
+{% endblock content %}
